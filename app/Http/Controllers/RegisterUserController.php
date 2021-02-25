@@ -8,6 +8,7 @@ use App\User;
 use App\User_profile;
 use App\Dealer_profile;
 use App\User_role_join;
+use App\Profile_approval;
 use Illuminate\Http\Request;
 use App\Manufacturer_profile;
 use Illuminate\Support\Facades\Hash;
@@ -60,16 +61,19 @@ class RegisterUserController extends Controller{
                     $Profile = new User_profile();
                     $Profile->user_id = $User->id;
                     $Profile->is_active = 'false'; // true , false
+                    $Profile->approval = 'false'; // true , false
                     $save = $Profile->save();
                 }elseif($request->role == "2"){
                     $Profile = new Dealer_profile();
                     $Profile->user_id = $User->id;
                     $Profile->is_active = 'false'; // true , false
+                    $Profile->approval = 'false'; // true , false
                     $save = $Profile->save();
                 }elseif($request->role == "3"){
                     $Profile = new Manufacturer_profile();
                     $Profile->user_id = $User->id;
                     $Profile->is_active = 'false'; // true , false
+                    $Profile->approval = 'false'; // true , false
                     $save = $Profile->save();
                 }
                 if($save){

@@ -13,10 +13,12 @@ class Vehical extends Model
     public function scopeGetUnsoldVehicals($query){
         return $query->where('state', '=', 'fresh')->where('status', '=', 'under_manufacturer');
     }
-    // public function vehical_manufacturer_join(){
-    //     return $this->hasMany(Vehical_manufacturer_join::class); 
-    // }
+    public function vehical_manufacturer_join(){
+        return $this->hasOne(Vehical_manufacturer_join::class); 
+    }
+    public function vehical_dealer_join(){
+        return $this->hasOne(Vehical_dealer_join::class); 
+    }
     
-
 
 }

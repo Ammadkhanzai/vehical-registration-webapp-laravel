@@ -42,6 +42,7 @@ class LoginUserController extends Controller {
                 'password.regex'=> 'Password must contain at least one lowercase, uppercase, digit and special character.',
                 'role.max'=>'Invalid Role',
                 'role.min'=>'Invalid Role',
+                'role.digits'=>'Invalid Role',
             ]
         );        
 
@@ -55,10 +56,10 @@ class LoginUserController extends Controller {
             }
             $redirectTO = "/";
             if ($request->role == '1'){
-                $redirectTO = 'user.admin';
+                $redirectTO = 'user.admin.dashboard';
             }
             if ($request->role == '2'){
-                $redirectTO = 'dealer.admin';
+                $redirectTO = 'dealer.admin.dashboard';
             }
             if ($request->role == '3'){
                 $redirectTO = 'manufacturer.admin.dashboard';

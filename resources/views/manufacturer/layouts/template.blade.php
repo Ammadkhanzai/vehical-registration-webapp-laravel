@@ -14,6 +14,12 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+    <!-- <script src="{{ asset('css/bootstrap-select.css')}}"> </script> -->
+
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+
+    <!-- <link href="{{ asset('select2/dist/css/select2.min.css')}}" rel="stylesheet" /> -->
+    
     
     @yield('head')
   </head>
@@ -40,9 +46,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
+                <a class="nav-link" href="{{ route('manufacturer.admin.view.dealers')}}">
+                  <span data-feather="users"></span>
+                  Dealers
                 </a>
               </li>
               <li class="nav-item">
@@ -52,12 +58,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
+                <a class="nav-link" href="{{ route('manufacturer.admin.create.transfered-vehicals')}}">
+                  <span data-feather="send"></span>
+                  Transfered Vehicals
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
                   Reports
@@ -68,41 +74,10 @@
                   <span data-feather="layers"></span>
                   Integrations
                 </a>
-              </li>
+              </li> -->
             </ul>
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
+            
           </div>
         </nav>
         @yield('content')
@@ -123,6 +98,16 @@
     <script>
       feather.replace()
     </script>
+    <!-- <script src="{{ asset('select2/dist/js/select2.min.js')}}"></script> -->
+    <!-- <script>
+        
+        $(document).ready(function() {
+            $('.getDealers').select2();
+            // $('.getVehicals').select2();
+            $('.getVehicals-multiple').select2();
+            
+        });
+    </script> -->
 
 
   </body>  

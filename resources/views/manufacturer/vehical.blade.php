@@ -18,16 +18,16 @@
             <li class="breadcrumb-item active" aria-current="page">Home</li>
         </ol>
     </nav>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-        <!-- <button type="button" class="btn btn-primary">Large button</button> -->
-    </div>
+    <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <button type="button" class="btn btn-primary">Large button</button>
+    </div> -->
     @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
     @endif
 
-    <h2>Current Vehicals Table</h2>
+    <!-- <h2>Current Vehicals Table</h2> -->
     <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
@@ -45,13 +45,13 @@
         @foreach ($vehicals as $vehical)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $vehical->vehical->model }}</td>
-                    <td>{{ $vehical->vehical->engine_number }}</td>
-                    <td>{{ $vehical->vehical->vehical_class }}</td>
-                    <td>
-                        <a href="{{ route('manufacturer.admin.show.vehical', $vehical->id )}}"><button type="button" class="btn btn-outline-info btn-sm">View</button></a>
-                        <a href="{{ route('manufacturer.admin.edit.vehical', $vehical->id )}}"><button type="button" class="btn btn-outline-dark btn-sm">Edit</button></a>
-                        <form action="{{ route('manufacturer.admin.delete.vehical', $vehical->id) }}" method="POST" class="d-inline">
+                    <td class="w-25">{{ $vehical->vehical->model }}</td>
+                    <td class="w-25">{{ $vehical->vehical->engine_number }}</td>
+                    <td class="w-25">{{ $vehical->vehical->vehical_class }}</td>
+                    <td class="w-25">
+                        <a href="{{ route('manufacturer.admin.show.vehical', $vehical->vehical_id )}}"><button type="button" class="btn btn-outline-info btn-sm">View</button></a>
+                        <a href="{{ route('manufacturer.admin.edit.vehical', $vehical->vehical_id )}}"><button type="button" class="btn btn-outline-dark btn-sm">Edit</button></a>
+                        <form action="{{ route('manufacturer.admin.delete.vehical', $vehical->vehical_id) }}" method="POST" class="d-inline">
                         @method('DELETE')
                         @csrf
                             <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>

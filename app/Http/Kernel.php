@@ -63,6 +63,12 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'RegisterUserAuth' => \App\Http\Middleware\RegisterUserAuth::class,
         'ManufacturerRoleAuth' => \App\Http\Middleware\ManufacturerRoleAuth::class,
+        'ManufacturerProfileAuth' => \App\Http\Middleware\manufacturerProfileApproval::class,
+        'DealerRoleAuth' => \App\Http\Middleware\DealerRoleAuth::class,
+        'DealerProfileApproval' => \App\Http\Middleware\dealerProfileApproval::class,
+        'UserRoleAuth' => \App\Http\Middleware\UserRoleAuth::class,
+        'userProfileApproval' => \App\Http\Middleware\userProfileApproval::class,
+        'AdminAuth' => \App\Http\Middleware\AdminAuthentication::class,
     ];
 
 

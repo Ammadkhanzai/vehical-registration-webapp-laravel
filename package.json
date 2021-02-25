@@ -23,7 +23,9 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "bootstrap-select": "^1.13.18",
         "font-awesome": "^4.7.0",
-        "popper": "^1.0.1"
+        "popper": "^1.0.1",
+        "select2": "^4.1.0-rc.0"
     }
 }

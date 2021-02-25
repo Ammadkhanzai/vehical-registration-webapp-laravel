@@ -31,7 +31,10 @@ class CreateUserProfilesTable extends Migration
             $table->string('zip')->nullable();
             $table->string('licence_number')->nullable();
             $table->string('licence_class')->nullable();
-            $table->enum('is_active',['true','false']);
+            $table->string('user_registration_no')->nullable();
+            $table->string('registration_date')->nullable();
+            $table->enum('is_active',['false','true']);
+            $table->enum('approval',['false','true']);
             $table->softDeletes();
             $table->timestamps();
         });

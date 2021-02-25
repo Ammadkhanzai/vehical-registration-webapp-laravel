@@ -43,14 +43,19 @@
       <div class="form-group">
         <label for="inputCnic" class="sr-only">CNIC Number</label>
         <input type="text" name="cnic" value="{{old('cnic')}}" id="inputCnic" class="form-control" placeholder="CNIC: Example: 4130477674155" required autofocus>
+        <small id="cnic" class="form-text text-muted">We'll never share your CNIC with anyone else.</small>
       </div>
       <div class="form-group">
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="text" name="email" value="{{old('email')}}" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          Your password must be 10-20 characters long, contain capital and small letters and numbers ans special character, and must not contain spaces, or emoji.
+        </small>
       </div>
       
       <div class="form-group">

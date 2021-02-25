@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\User_profile;
+use App\Dealer_profile;
 use App\User_role_join;
 use App\Manufacturer_profile;
 use Illuminate\Database\Eloquent\Model;
@@ -32,6 +34,17 @@ class User extends Authenticatable
         
     } 
 
-
+    public function dealer_profile($columnName = null){
+        if( $columnName != null){
+            return $this->hasOne(Dealer_profile::class)->select($columnName);
+        }
+        return $this->hasOne(Dealer_profile::class);
+        
+    } 
+    public function user_profile(){
+      
+        return $this->hasOne(user_profile::class)->where('is_active','true');
+        
+    } 
 
 }

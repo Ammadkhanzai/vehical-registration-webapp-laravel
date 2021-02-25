@@ -2,7 +2,7 @@
 @section('page-title','Home | Dashboard')
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
     <h1 class="h2">Dashboard</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
@@ -14,136 +14,83 @@
         This week
         </button>
     </div>
+    </div> -->
+
+
+    <div class="row">
+    <div class="col-md-12">
+		    <div class="">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>Your Profile</h4>
+		                    <hr>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-md-6">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <?php if($errors->any()): ?>
+                        <div class="form-group">
+                            
+                        <?php foreach($errors->all() as $error ): ?>
+                            <div class="alert alert-danger" role="alert"><?php echo $error; ?></div>
+                        <?php endforeach;?>
+                            
+                        </div>
+                    <?php endif; ?>
+		                    <form action="{{route('manufacturer.admin.update.manufacturer-profile',$userModel)}}" method="POST">
+                        @method('PUT')
+                        @csrf
+                        
+                              <div class="form-group row d-block">
+                                <label for="name" class="col-12 col-form-label">Company Name <span class="text-danger">*</span></label> 
+                                <div class="col-12">
+                                  <input id="name" name="name" value="{{ old('name') ? old('name') : __($userModel->company_name) }}" placeholder="Company Name" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row d-block">
+                                <label for="email" class="col-12 col-form-label">Company Email <span class="text-danger">*</span></label> 
+                                <div class="col-12">
+                                  <input id="email" name="email" value="{{ old('email') ? old('email') : __($userModel->company_email) }}" placeholder="Company Email" class="form-control here" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row d-block">
+                                <label for="phone" class="col-12 col-form-label">Company Phone <span class="text-danger">*</span></label> 
+                                <div class="col-12">
+                                  <input id="phone" name="phone" value="{{ old('phone') ? old('phone') : __($userModel->company_phone) }}" placeholder="Company Phone" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row d-block">
+                                <label for="wesite" class="col-12 col-form-label">Company Website <span class="text-danger">*</span></label> 
+                                <div class="col-12">
+                                  <input id="website" name="website" value="{{ old('website') ? old('website') : __($userModel->company_website) }}" placeholder="Company Website" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row d-block">
+                                <label for="address" class="col-12 col-form-label">Company Address <span class="text-danger">*</span></label> 
+                                <div class="col-12">
+                                  <textarea id="address" name="address" class="form-control">{{ old('address') ? old('address') : __($userModel->company_address) }}</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row  d-block">
+                                <div class="col-12">
+                                  <button name="submit" type="submit" class="s btn btn-primary">Update Profile</button>
+                                </div>
+                              </div>
+                            </form>
+		                </div>
+		            </div>
+		            
+		        </div>
+		    </div>
+		</div>
+    
     </div>
-
-
-    <h2>Section title</h2>
-    <div class="table-responsive">
-    <table class="table table-striped table-sm">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-        </tr>
-        <tr>
-            <td>1,002</td>
-            <td>amet</td>
-            <td>consectetur</td>
-            <td>adipiscing</td>
-            <td>elit</td>
-        </tr>
-        <tr>
-            <td>1,003</td>
-            <td>Integer</td>
-            <td>nec</td>
-            <td>odio</td>
-            <td>Praesent</td>
-        </tr>
-        <tr>
-            <td>1,003</td>
-            <td>libero</td>
-            <td>Sed</td>
-            <td>cursus</td>
-            <td>ante</td>
-        </tr>
-        <tr>
-            <td>1,004</td>
-            <td>dapibus</td>
-            <td>diam</td>
-            <td>Sed</td>
-            <td>nisi</td>
-        </tr>
-        <tr>
-            <td>1,005</td>
-            <td>Nulla</td>
-            <td>quis</td>
-            <td>sem</td>
-            <td>at</td>
-        </tr>
-        <tr>
-            <td>1,006</td>
-            <td>nibh</td>
-            <td>elementum</td>
-            <td>imperdiet</td>
-            <td>Duis</td>
-        </tr>
-        <tr>
-            <td>1,007</td>
-            <td>sagittis</td>
-            <td>ipsum</td>
-            <td>Praesent</td>
-            <td>mauris</td>
-        </tr>
-        <tr>
-            <td>1,008</td>
-            <td>Fusce</td>
-            <td>nec</td>
-            <td>tellus</td>
-            <td>sed</td>
-        </tr>
-        <tr>
-            <td>1,009</td>
-            <td>augue</td>
-            <td>semper</td>
-            <td>porta</td>
-            <td>Mauris</td>
-        </tr>
-        <tr>
-            <td>1,010</td>
-            <td>massa</td>
-            <td>Vestibulum</td>
-            <td>lacinia</td>
-            <td>arcu</td>
-        </tr>
-        <tr>
-            <td>1,011</td>
-            <td>eget</td>
-            <td>nulla</td>
-            <td>Class</td>
-            <td>aptent</td>
-        </tr>
-        <tr>
-            <td>1,012</td>
-            <td>taciti</td>
-            <td>sociosqu</td>
-            <td>ad</td>
-            <td>litora</td>
-        </tr>
-        <tr>
-            <td>1,013</td>
-            <td>torquent</td>
-            <td>per</td>
-            <td>conubia</td>
-            <td>nostra</td>
-        </tr>
-        <tr>
-            <td>1,014</td>
-            <td>per</td>
-            <td>inceptos</td>
-            <td>himenaeos</td>
-            <td>Curabitur</td>
-        </tr>
-        <tr>
-            <td>1,015</td>
-            <td>sodales</td>
-            <td>ligula</td>
-            <td>in</td>
-            <td>libero</td>
-        </tr>
-        </tbody>
-    </table>
     </div>
 </main>
 @endsection

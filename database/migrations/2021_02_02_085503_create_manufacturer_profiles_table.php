@@ -16,12 +16,15 @@ class CreateManufacturerProfilesTable extends Migration
         Schema::create('manufacturer_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unique();
-            $table->bigInteger('company_name')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('company_phone')->nullable();
             $table->string('company_email')->nullable();
+            $table->string('company_website')->nullable();
             $table->string('company_address')->nullable();
             $table->string('company_registration_no')->nullable();
             $table->string('registration_date')->nullable();
-            $table->enum('is_active',['true','false']);
+            $table->enum('is_active',['false','true']);
+            $table->enum('approval',['false','true']);
             $table->softDeletes();
             $table->timestamps();
         });

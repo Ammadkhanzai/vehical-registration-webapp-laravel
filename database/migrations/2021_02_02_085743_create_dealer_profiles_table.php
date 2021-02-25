@@ -16,13 +16,15 @@ class CreateDealerProfilesTable extends Migration
         Schema::create('dealer_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unique();
-            $table->bigInteger('business_name')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('business_phone')->nullable();
             $table->string('business_email')->nullable();
             $table->string('business_website')->nullable();
             $table->string('business_address')->nullable();
             $table->string('business_registration_no')->nullable();
             $table->string('registration_date')->nullable();
-            $table->enum('is_active',['true','false']);
+            $table->enum('is_active',['false','true']);
+            $table->enum('approval',['false','true']);
             $table->softDeletes();
             $table->timestamps();
         });
