@@ -226,6 +226,7 @@ class DealerHomeController extends Controller
 
 
     public function updateProfile(Request $request){
+
         
         $user = new Dealer_profile();
         $profile = $user->where('user_id',Auth::id())->first();

@@ -25,8 +25,8 @@
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-12 col-md-3 mr-0 col-lg-3 col-xl-2 mr-0" href="#">{{ __('Manufacturer Admin Panel') }}</a>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <a class="navbar-brand col-sm-12 col-md-3 mr-0 col-lg-3 col-xl-2 mr-0" href="#">{{ __('Manufacturer Panel') }}</a>
+      
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="{{route('user.logout')}}">Sign out</a>
@@ -54,27 +54,15 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('manufacturer.admin.view.vehicals')}}">
                   <span data-feather="shopping-cart"></span>
-                  Vehicals
+                  Vehicles
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('manufacturer.admin.create.transfered-vehicals')}}">
                   <span data-feather="send"></span>
-                  Transfered Vehicals
+                  Transfered Vehicles
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
-              </li> -->
             </ul>
 
             

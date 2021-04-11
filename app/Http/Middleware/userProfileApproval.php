@@ -22,9 +22,9 @@ class userProfileApproval
             if(!Auth::user()->role()->where('role_id', "1" )->exists()){
                 return abort(404);
             }
-            if(!$UP->where('is_active','true')->where('user_id',Auth::user()->id)->exists()){
-                return abort(404);
-            }
+            // if(!$UP->where('is_active','true')->where('user_id',Auth::user()->id)->exists()){
+            //     return abort(404);
+            // }
         }
         return $next($request);
     }

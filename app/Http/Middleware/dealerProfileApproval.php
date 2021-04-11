@@ -17,14 +17,16 @@ class dealerProfileApproval
      */
     public function handle($request, Closure $next)
     {
-        $MP = new Dealer_profile();
+        $DP = new Dealer_profile();
         if (Auth::check()) {
             if(!Auth::user()->role()->where('role_id', "2" )->exists()){
+                
                 return abort(404);
             }
-            if(!$MP->where('is_active','true')->where('user_id',Auth::user()->id)->exists()){
-                return abort(404);
-            }
+            // if(!$DP->where('is_active','true')->where('user_id',Auth::user()->id)->exists()){
+                
+            //     return abort(404);  
+            // }
         }
         return $next($request);
     }

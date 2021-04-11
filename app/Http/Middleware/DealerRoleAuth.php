@@ -18,6 +18,7 @@ class DealerRoleAuth
     {
         if (Auth::check()) {
             if(!Auth::user()->role()->where('role_id', "2" )->exists()){
+                
                 return abort(404);
             }    
         }

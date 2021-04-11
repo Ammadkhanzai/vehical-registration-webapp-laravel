@@ -8,7 +8,7 @@
 		        <div class="card-body">
 		            <div class="row">
 		                <div class="col-md-12">
-		                    <h4>Your Profile</h4>
+		                    <h4>Profile</h4>
 		                    <hr>
 		                </div>
 		            </div>
